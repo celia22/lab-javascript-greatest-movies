@@ -69,7 +69,14 @@ const rateAverageDramaMovies = () => {
 
 console.log(rateAverageDramaMovies())
 
-// Iteration 5: Ordering by year - Order by year, ascending (in growing order).  sort(a-b)
+// Iteration 5: Ordering by year - Order by year, ascending (in growing order).
+
+const orderingMoviesByYear = () => {
+  let moviesYear = movies.map(x => x.year)
+  return moviesYear.sort()
+};
+
+console.log(orderingMoviesByYear());
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles. sort o lo que has usado para el 1r lab
 //  para ordenar el driver y el copilot
@@ -86,7 +93,3 @@ We need to get the array of all directors. Since this is a warm up, we will give
 
 
 
-
-let getAllDirectors = () => movies.director.map(x => x)
-
-console.log(getAllDirectors)
