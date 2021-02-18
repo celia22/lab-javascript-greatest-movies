@@ -78,8 +78,21 @@ const orderingMoviesByYear = () => {
 
 console.log(orderingMoviesByYear());
 
-// Iteration 6: Alphabetic Order - Order by title and print the first 20 titles. sort o lo que has usado para el 1r lab
-//  para ordenar el driver y el copilot
+
+// Iteration 6: Alphabetic Order - Order by title and print the first 20 titles. 
+
+const OrderByTitle = () =>{
+  let moviesbytitle = movies.map(x => x.title);
+  let sortedTitles = moviesbytitle.sort()
+  let twentyFirstMovies = [];
+ 
+    for (let i = 0; i <= 20; i++){
+      console.log(sortedTitles[i])
+    }
+  return twentyFirstMovies
+};
+
+console.log(OrderByTitle())
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 
