@@ -48,7 +48,26 @@ const rateAverage = () => {
 
 console.log(rateAverage());
 
-// Iteration 4: Drama movies - Get the average of Drama Movies. map + filter + average
+// Iteration 4: Drama movies - Get the average of Drama Movies. 
+
+const rateAverageDramaMovies = () => {
+  let drama = movies.filter(x => x.genre.includes("Drama"));
+  let rateTotal = drama.map(x => x.rate)
+  let rateav = 0
+  //console.log(rateTotal)
+  //console.log(rateTotal.length)
+  let ratesum = 0;
+
+  for(let i = 0; i < rateTotal.length; i++){  
+      ratesum += rateTotal[i]
+      rateav = ratesum / rateTotal.length
+      //console.log(ratesum)
+  }
+  rateav = rateav.toFixed(2);
+  return rateav
+};
+
+console.log(rateAverageDramaMovies())
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order).  sort(a-b)
 
