@@ -28,6 +28,26 @@ console.log(howManyDramaMoviesStevenDirected())
 
 // Iteration 3: All rates average - Get the average of all rates with 2 decimals. map + average
 
+const rateAverage = () => {
+  let rateTotal = movies.map(x => x.rate)
+  let rateav = 0
+  //console.log(rateTotal)
+  //console.log(rateTotal.length)
+  let ratesum = 0;
+
+  for(let i = 0; i < rateTotal.length; i++){  
+      ratesum += rateTotal[i]
+      rateav = ratesum / rateTotal.length
+      //console.log(ratesum)
+  }
+  rateav = rateav.toFixed(2);
+  return rateav
+};
+
+
+
+console.log(rateAverage());
+
 // Iteration 4: Drama movies - Get the average of Drama Movies. map + filter + average
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order).  sort(a-b)
