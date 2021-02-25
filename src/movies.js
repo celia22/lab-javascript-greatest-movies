@@ -6,11 +6,7 @@ const getAllDirectors = (arr) => {
      return directors
  };
   
-console.log(getAllDirectors(movies));
-
-
-
-// _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors. How could you "clean" a bit this array and make it unified (without duplicates)?
+//console.log(getAllDirectors(movies));
 
 
 
@@ -23,28 +19,36 @@ let howManyMovies = (arr) => {
     return sum
 };
 
-console.log(howManyMovies(movies));
+//console.log(howManyMovies(movies));
 
 
 
 // Iteration 3: All rates average - Get the average of all rates with 2 decimals. 
 
 const ratesAverage = (arr) => {
-    let rateTotal = arr.map(x => x.rate)
-    let rateav = 0
-    let ratesum = 0;
 
-    // HACER REDUCE
-    for(let i = 0; i < rateTotal.length; i++){  
-        ratesum += rateTotal[i]
-        rateav = ratesum / rateTotal.length
-        //console.log(ratesum)
-  };
-    rateav = Math.round(rateav * 100) / 100
-    return rateav
-};
-
-console.log(ratesAverage(movies));
+       if (arr.length === 0) {
+          return 0;
+        }
+      
+        const rates = arr.map(function (x) {
+          return x.rate;
+        });
+      
+        console.log(rates);
+      
+        let totalRate = rates.reduce(function (acc, el) {
+          if (el) {
+            return acc + el;
+          } else {
+            return acc;
+          }
+        }, 0);
+      
+        return Math.round((totalRate / arr.length) * 100) / 100;
+}
+      
+      console.log(ratesAverage(movies));
 
 
 
@@ -56,8 +60,6 @@ const dramaMoviesRate = (arr) => {
     let rateav = 0
     let ratesum = 0;
 
-    // HACER REDUCE
-
   for(let i = 0; i < rateTotal.length; i++){  
       ratesum += rateTotal[i]
       rateav = ratesum / rateTotal.length
@@ -67,7 +69,7 @@ const dramaMoviesRate = (arr) => {
     return rateav
 };
 
-console.log(dramaMoviesRate(movies));
+//console.log(dramaMoviesRate(movies));
 
 
 
@@ -77,9 +79,9 @@ console.log(dramaMoviesRate(movies));
 const orderByYear = (arr) => {
     let moviesYear = arr.slice(0);
         moviesYear.sort(function(a,b) {
-         return a.year - b.year; 
-    })
-    return moviesYear
+        return a.year - b.year || a.title.localeCompare(b.title)
+      })
+  return moviesYear
    
 };
 
@@ -88,7 +90,7 @@ console.log(orderByYear(movies));
 
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles. 
-// ARREGLAR LA CACA ESTA
+
 
 const orderAlphabetically = (arr) => {
     let byTitle = [];
@@ -105,27 +107,16 @@ const orderAlphabetically = (arr) => {
         return twentyFirstMovies
   };       
 };
- console.log(orderAlphabetically(movies));
- 
+//// console.log(orderAlphabetically(movies));
 
-
-/*
-const orderAlphabetically = (arr) => {
-    let byTitle = [];
-        byTitle = arr.map (x => x.title)
-         byTitle.sort();      
-     return byTitle
-  };
- console.log(orderAlphabetically(movies));
-*/
- 
 
 
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
 
-// BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
 
+
+// BONUS - Iteration 8: Best yearly rate average - Best yearly rate average
 
 
 
